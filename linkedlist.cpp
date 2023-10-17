@@ -2,9 +2,8 @@
 * 
 *
 * Name: Fabio Ventura
-* Coding 06
-* purpose: program to serve as the driver file for testing the Linked-List ADT
-*
+* Coding 07
+* purpose: program to serve as the method definitions for the linked list class
 *
 **************************/
 
