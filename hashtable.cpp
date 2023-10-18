@@ -12,10 +12,32 @@
 
 HashTable::HashTable()
 {
-
+    table = new LinkedList[HASHTABLESIZE];
 }
 
 HashTable::~HashTable()
+{
+    delete[] table;
+}
+
+bool HashTable::insertEntry(int id, string* data)
+{
+    bool success = false;
+    if(id > 0 && !data->empty())// Validating id and string information
+    {
+        table->addNode(id, data);
+        success = true;
+    }
+    return success;
+}
+
+bool HashTable::getData(int id, string *data)
+{
+    
+    
+}
+
+bool HashTable::removeEntry(int id)
 {
 
 }
@@ -25,22 +47,7 @@ int HashTable::getCount()
 
 }
 
-bool HashTable::getData(int id, string *data)
-{
-    
-}
-
 void HashTable::printTable()
-{
-
-}
-
-bool HashTable::removeEntry(int id)
-{
-
-}
-
-bool HashTable::insertEntry(int id, string* data)
 {
 
 }

@@ -9,7 +9,7 @@
 #ifndef HASHTABLE_H
 #define HASHTABLE_H
 
-#define HASHTABLESIZE = 15;
+#define HASHTABLESIZE 15
 
 #include <iostream> //For loose coupling, so string does not rely on linkedlist.h
 #include "linkedlist.h"
@@ -36,9 +36,10 @@ class HashTable
     private:
         //Hash method, uses modulo
         int hash(int); 
-
+        
         //Attributes
         int count;
+        LinkedList* table;
 };
 
 #endif // HASHTABLE_H
