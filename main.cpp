@@ -4,7 +4,7 @@
 
 #include "main.h"
 
-int main() {
+int main(int argc, char** argv) {
     //seed the rand function
     srand(time(NULL));
 
@@ -40,6 +40,7 @@ int main() {
         cout << ids[i] << " : " << strs[i] << endl;
     }
     cout << endl;
+
 
     /*
      * Now you have two parallel arrays with ids and strings for test data.
