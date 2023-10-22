@@ -1,6 +1,12 @@
-/* 
- * your comment header here
- */
+/*************************
+* 
+*
+* Name: Fabio Ventura
+* Coding 07
+* purpose: program to serve as the driver file for the program
+*
+*
+**************************/
 
 #include "main.h"
 
@@ -14,6 +20,7 @@ int main(int argc, char** argv) {
      * Do not modify this code from here to the next comment telling
      * you to "START HERE"
      */
+
     const int testdatasize = BASE + (rand() % OFFSET + 1);
     int ids[testdatasize];
     string strs[testdatasize];
@@ -40,6 +47,14 @@ int main(int argc, char** argv) {
         cout << ids[i] << " : " << strs[i] << endl;
     }
     cout << endl;
+
+    HashTable table[HASHTABLESIZE];
+
+    table[0].insertEntry(5, strs);
+    table[1].insertEntry(5, strs);
+
+ 
+
 
 
     /*

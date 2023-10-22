@@ -13,6 +13,7 @@
 HashTable::HashTable()
 {
     table = new LinkedList[HASHTABLESIZE];
+    count = 0;
 }
 
 HashTable::~HashTable()
@@ -25,10 +26,13 @@ bool HashTable::insertEntry(int id, string* data)
     bool success = false; //flag
     if(id > 0 && !data->empty())// Validating id and string information
     {
+        int index = hash(id);//hasing
         //using addnode method from linkedlist to insert entry
-        table->addNode(id, data);
-        success = true;
-        count ++;
+        if(table[index].addNode(id, data))
+        {
+            success = true;
+            count ++;
+        }
     }
     return success;
 }
@@ -36,13 +40,17 @@ bool HashTable::insertEntry(int id, string* data)
 bool HashTable::getData(int id, string *data)
 {
     bool success = false;//flag
-    Data* temp;// temp data struct to retrive info
-
-    if(table->getNode(id, temp))// if id found
+    
+    if(id > 0)// Validating data
     {
+        int index = hash(id);
         // string set to getNode Data
-        *data = temp->data;
-        success = true;
+        Data temp;
+       if(table[index].getNode(id, &temp))
+       {
+            *data = temp.data;
+            success = true;
+       }
     }
     else
     {   
@@ -57,9 +65,14 @@ bool HashTable::removeEntry(int id)
     bool success = false;
     if(id>0)// Initial validation
     {
-        table->deleteNode(id);
-        success = true;
-        count--;
+        int index = hash(id);
+        
+        if(table[index].deleteNode(id))
+        {
+            success = true;
+            count--;
+
+        };
     }
 
     return success;
@@ -72,11 +85,11 @@ int HashTable::getCount()
 
 void HashTable::printTable()
 {
-    
-    for (int i = 0; i < HASHTABLESIZE; i++)
+    for(int i = 0; i < HASHTABLESIZE; ++i)
     {
-        std::cout << "Entry: " << i + 1 << ""; 
-        table[i].printList(true);
+        std::cout << "Entry " << i << ": ";
+        table[i].printList(); 
+        std::cout << std::endl;
     }
 }
 
