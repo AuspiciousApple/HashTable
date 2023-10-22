@@ -15,7 +15,10 @@ LinkedList::LinkedList()
     this->head = NULL;
 }
 
-LinkedList::~LinkedList(){}
+LinkedList::~LinkedList()
+{
+    delete head; 
+}
 
 bool LinkedList::addNode(int id, string* data)
 {

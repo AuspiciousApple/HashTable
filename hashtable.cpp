@@ -24,13 +24,13 @@ HashTable::~HashTable()
 bool HashTable::insertEntry(int id, string* data)
 {
     bool success = false; //flag
-    if(id > 0 && !data->empty())// Validating id and string information
+    if(id > 0 && !data->empty() && data != NULL)// Validating id and string information
     {
         int index = hash(id);//hasing
         //using addnode method from linkedlist to insert entry
-        if(table[index].addNode(id, data))
+        success = table[index].addNode(id, data);
+        if(success)
         {
-            success = true;
             count ++;
         }
     }
