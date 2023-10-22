@@ -219,5 +219,27 @@ bool LinkedList::exists(int id)
     return exist;
 }
 
+void LinkedList::printTable() 
+{
+    Node* current = head;  
+    if (!current) 
+    {
+        std::cout << "EMPTY";
+    } 
+    else 
+    {
+        while (current) 
+        {
+            std::cout << current->data.id;  
+            current = current->next; 
+            if (current) 
+            {
+                std::cout << " --> ";
+            }
+        }
+    }
+}
+
+
 
 

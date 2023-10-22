@@ -29,6 +29,7 @@ class LinkedList
         bool getNode(int, Data*);
         void printList(bool = false);
         int getCount();
+        void printTable();
 
 
         //Setters

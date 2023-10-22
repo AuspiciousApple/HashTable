@@ -88,7 +88,7 @@ void HashTable::printTable()
     for(int i = 0; i < HASHTABLESIZE; ++i)
     {
         std::cout << "Entry " << i << ": ";
-        table[i].printList(); 
+        table[i].printTable(); 
         std::cout << std::endl;
     }
 }
