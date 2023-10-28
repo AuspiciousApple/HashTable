@@ -34,7 +34,7 @@ class HashTable
 
 
     private:
-        //Hash method, uses modulo
+        //Hash method
         int hash(int); 
         
         //Attributes
