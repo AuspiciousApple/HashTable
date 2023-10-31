@@ -77,7 +77,8 @@ int main(int argc, char** argv)
         if (hashtable.getData(i, &data)) 
         {
             cout << "Data for ID " << i << ": " << data << endl;
-        } else 
+        } 
+        else 
         {
             cout << "Failed to get data for ID " << i << endl;
         }
